@@ -1,0 +1,33 @@
+#root {
+	height: 100%;
+}
+
+html {
+	font-size: 1px;
+}
+
+html, body {
+	height: 100%;
+}
+
+body {
+	font-size: 16rem;
+	font-family: var(--font-family);
+	background: var(--dark);
+	color: var(--white);
+}
+
+.container {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	height: 100%;
+}
+
+.ml-auto {
+	margin-left: auto;
+}
+
+.btn {
+    cursor: pointer;
+    border: none;
+}
