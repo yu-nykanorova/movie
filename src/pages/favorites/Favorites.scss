@@ -1,0 +1,18 @@
+.favorites {
+    padding: 32rem;
+
+    .favorites-title {
+        font-weight: 600;
+        font-size: 20rem;
+        color: var(--white);
+        margin-bottom: 24rem;
+    }
+    
+    .favorites-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 25rem;
+    }
+
+}
+
