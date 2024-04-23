@@ -6,17 +6,18 @@ import { HeartFilledIcon } from "../../icons/HeartFilled/HeartFilledIcon";
 export const Film = ({ film }) => {
     // const handleToggleFavorite = () => {
     //     if (film.isFavorited) {
-          
-    //     }
+    // }
     // }
   return (
     <div className="film">
-        <img src={film.image} alt={film.title} />
+        <div className="film-image">  
+          <img src={film.image} alt={film.title} />
+        </div>
         <div className="film-info">
           <div className="film-title">
             {film.title}
           </div>
-          <div className="film-data">
+          <div className="film-detail">
             <p>{film.year} | {film.genre}</p>
           </div>
         </div>

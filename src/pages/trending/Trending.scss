@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 .trending {
 	padding: 32rem;
 
@@ -15,22 +14,8 @@
 		gap: 24rem;
 	}
 
-=======
-.trending {
-	padding: 32rem;
+}
 
-	.trend-title {
-		font-weight: 600;
-		font-size: 20px;
-		color: var(--white);
-		margin-bottom: 16rem;
-	}
-
-	.trending-list {
-		display: grid;
-		grid-template-columns: 1fr 1fr 1fr 1fr;
-		gap: 24rem;
-	}
-
->>>>>>> ea9b5e5fc51b3d5bf85c1cb30654ebff3ccf8fa2
+.is-active-trend-film {
+	opacity: 0.3;
 }

@@ -3,7 +3,7 @@ export const LikeBlock = (props) => {
     if (props.onClick) {
       props.onClick();
     }
-  }
+  } 
   
   return (
     <div className={`like-block ${props.className}`} onClick={handleClick}>{props.children}</div>

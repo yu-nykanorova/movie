@@ -1,10 +1,20 @@
 import { Header } from "../../shared/ui/Header/Header";
 import { Film } from "../../shared/ui/Film/Film";
+import { FilmData } from "../../shared/ui/Film/FilmData";
 import { films } from "../../database/films";
+import { useState, useEffect } from "react";
 
 export const Trending = () => {
     const trendFilms = films.filter((film) => film.isTrend);
-    const listItems = trendFilms.map((film) => <Film key={film.id} film={film} />);
+    const [selectedFilm, setSelectedFilm] = useState(trendFilms[0]);
+
+    useEffect(() => {
+        setSelectedFilm(trendFilms[0]);
+    }, []);
+
+    const handleFilmClick = (film) => {
+        setSelectedFilm(film);
+    };
 
     return (
         <>
@@ -12,34 +22,18 @@ export const Trending = () => {
             <div className="trending">
                 <div className="trend-title">Trending at this moment</div>
                 <div className="trending-list">
-                    {listItems}
-                </div>
-            </div>
-            <div className="main-trend">
-                <div className="main-trend__image">
-                    <img src="" alt="" />
-                </div>
-                <div className="main-trend__info">
-                    <div className="main-trend__title">
-                        <h3></h3>
-                        <div className="raiting">
-                            
+                    {trendFilms.map((film) => (
+                        <div key={film.id} onClick={() => handleFilmClick(film)} className={film.id === selectedFilm.id ? "" : "is-active-trend-film"}>
+                            <Film film={film} />
                         </div>
-                    </div>
-                    <div className="main-trend__info-data">
-                        <p></p>
-                        <p></p>
-                        <p></p>
-                    </div>
-                    <div className="main-trend__desc">
-
-                    </div>
-                    <div className="main-trend__btn">
-                        <button className="main-trend__btn-watch">Watch now</button>
-                        <button className="main-trend__btn-like"></button>
-                    </div>
+                    ))}
                 </div>
             </div>
+
+            <div>
+                {selectedFilm && <FilmData film={selectedFilm} />}
+            </div>
+            
         </>
     )
 }
