@@ -12,6 +12,7 @@ import App from "../../App";
 import PrivateRoutes from "./PrivateRoutes";
 import { Trending } from "../../pages/trending/Trending";
 import { Home } from "../../pages/home/Home";
+import { NotFound } from "../../shared/ui/NotFound/NotFound";
 
 export const AppRouter = () => {
     const [loggedIn] = useState (true);
@@ -25,6 +26,7 @@ export const AppRouter = () => {
                     <Route index={true} path="/" element={<Home />} />
                     <Route index={true} path="/trending" element={<Trending />} />
                     <Route index={true} path="/favorites" element={<Favorites />} />
+                    <Route index={true} path="*" element={<NotFound />} />
                 </Route>
             </Route>
         )

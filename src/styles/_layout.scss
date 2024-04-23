@@ -30,4 +30,10 @@ body {
 .btn {
     cursor: pointer;
     border: none;
+	border-radius: 14rem;
+	background: var(--purple);
+}
+
+.not-found {
+	text-align: center;
 }

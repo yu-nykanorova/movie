@@ -1,4 +1,7 @@
-import { HeartWhiteIcon } from "../../icons/HeartWhite/HeartWhiteIcon";
+import { FilmIcon } from "../../icons/FilmIcon/FilmIcon";
+import { HeartWhiteIcon } from "../../icons/HeartWhiteIcon/HeartWhiteIcon";
+import { TrendingUpIcon } from "../../icons/TrendingUpIcon/TrendingUpIcon";
+import { CalendarIcon } from "../../icons/CalendarIcon/CalendarIcon";
 import { LogoIcon } from "../../icons/Logo/LogoIcon";
 import { NavLink, Link } from "react-router-dom";
 
@@ -10,10 +13,22 @@ export const Sidebar = () => {
             </div>
             <div className="sidebar-menu">
                 <div className="sidebar-menu__main">
-                    <div className="menu-item">
-                        <NavLink to="/favorites"><HeartWhiteIcon /></NavLink>
+                    <NavLink to="/" className={({ isActive }) => isActive ? "menu-item is-active" : "menu-item"}>
+                        <FilmIcon /> 
+                        <p>Home</p>
+                    </NavLink>
+                    <NavLink to="/favorites" className={({ isActive }) => isActive ? "menu-item is-active" : "menu-item"}>
+                        <HeartWhiteIcon />
                         <p>Favourites</p>
-                    </div>
+                    </NavLink>
+                    <NavLink to="/trending" className={({ isActive }) => isActive ? "menu-item is-active" : "menu-item"}>
+                        <TrendingUpIcon />
+                        <p>Trending</p>
+                    </NavLink>
+                    <NavLink to="/coming" className={({ isActive }) => isActive ? "menu-item is-active" : "menu-item"}>
+                        <CalendarIcon />
+                        <p>Coming soon</p>
+                    </NavLink>
                 </div>
                 <div className="sidebar-menu__social">
 
