@@ -3,6 +3,7 @@ import { LikeBlock } from "../LikeBlock/LikeBlock";
 import { HeartEmptyIcon } from "../../icons/HeartEmpty/HeartEmptyIcon";
 import { HeartFilledIcon } from "../../icons/HeartFilled/HeartFilledIcon";
 import { StarIcon } from "../../icons/StarIcon/StarIcon";
+import { WatchNow } from "../Buttons/WatchNow";
 
 export const FilmData = ({film}) => {
   
@@ -26,7 +27,8 @@ export const FilmData = ({film}) => {
                 </div>
                 <p className="film-data__desc">{film.desc}</p>
                 <div className="film-data__btn">
-                    <button className="btn film-data__btn-watch">Watch now</button>
+                    {/* <button className="btn film-data__btn-watch">Watch now</button> */}
+                    <WatchNow />
                     <button className="film-data__btn-like">
                         <LikeBlock className="film-like-block">
                             {film.isFavorited ?

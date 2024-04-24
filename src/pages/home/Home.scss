@@ -1,0 +1,117 @@
+.poster-container {
+    position: relative;
+    height: 455rem;
+    margin-bottom: 6rem;
+
+    .poster {
+        position: absolute;
+        max-height: 455rem;
+        max-width: 1166rem;
+        top: 0;
+        z-index: -1;
+        overflow: hidden;
+    
+        img {
+            height: 100%;
+            width: 100%;
+        }
+        
+        &__info {
+            position: absolute;
+            bottom: 0;
+            padding: 32rem;
+        }
+    
+        &__title {
+            font-weight: 600;
+            font-size: 48rem;
+            line-height: 100%;
+            color: var(--white);
+            margin-bottom: 20rem;
+        }
+    
+        &__details {
+            font-weight: 400;
+            font-size: 14rem;
+            line-height: 143%;
+            color: var(--white);
+            margin-bottom: 36rem;
+        }
+    
+        &__btn {
+            display: flex;
+            align-items: center;
+            gap: 16rem;
+        }
+    
+        &__btn-like {
+            background: transparent;
+            border: none;
+            max-width: 54rem;
+            max-height: 54rem;
+            cursor: pointer;
+    
+            .film-like-block {
+                max-width: 54rem;
+                max-height: 54rem;
+                border-radius: 14rem;
+                padding: 14rem;
+
+                .icon-heart svg {
+                    width: 24rem;
+                    height: 24rem;
+                }
+            }
+        }
+    }
+    
+}
+
+.continue-watching {
+    padding: 32rem;
+
+    &__title {
+        font-weight: 600;
+		font-size: 20px;
+		color: var(--white);
+		margin-bottom: 16rem;
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr; 
+        gap: 24rem;
+    }
+
+    &__film {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 348rem;
+        max-height: 209rem;
+        overflow: hidden;
+        border-radius: 20rem;
+        object-fit: cover;
+        border: 1px solid var(--gray);
+        position: relative;
+        cursor: pointer;
+        transition: var(--transition);
+
+        &:hover {
+            transform: scale(1.03);
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            border-radius: 20rem;
+        }
+
+        .film-like-block {
+            position: absolute;
+            top: 20rem;
+            right: 20rem;
+            border-radius: 8rem;
+        }
+    }
+}

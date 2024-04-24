@@ -7,6 +7,7 @@ export const films = [
         genre: "Action comedy",
         isFavorited: true,
         isTrend: false,
+        isWatching: false,
         rating: 7.8,
         duration: "2h 38m",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam aliquam quaerat eligendi quas dolor ad voluptatibus sit libero vel facere pariatur nisi dolore, eveniet neque illo quidem sequi quo soluta!"
@@ -19,6 +20,7 @@ export const films = [
         genre: "Drama",
         isFavorited: true,
         isTrend: true,
+        isWatching: false,
         rating: 7.8,
         duration: "2h 38m",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam aliquam quaerat eligendi quas dolor ad voluptatibus sit libero vel facere pariatur nisi dolore, eveniet neque illo quidem sequi quo soluta!"
@@ -31,6 +33,7 @@ export const films = [
         genre: "Action comedy",
         isFavorited: false,
         isTrend: true,
+        isWatching: false,
         rating: 7.8,
         duration: "2h 38m",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam aliquam quaerat eligendi quas dolor ad voluptatibus sit libero vel facere pariatur nisi dolore, eveniet neque illo quidem sequi quo soluta!"
@@ -43,6 +46,7 @@ export const films = [
         genre: "Sci-fi",
         isFavorited: false,
         isTrend: true,
+        isWatching: false,
         rating: 7.8,
         duration: "2h 38m",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam aliquam quaerat eligendi quas dolor ad voluptatibus sit libero vel facere pariatur nisi dolore, eveniet neque illo quidem sequi quo soluta!"
@@ -55,9 +59,25 @@ export const films = [
         genre: "Documentary series",
         isFavorited: false,
         isTrend: true,
+        isWatching: false,
         rating: 7.8,
         duration: "2h 38m",
         desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam aliquam quaerat eligendi quas dolor ad voluptatibus sit libero vel facere pariatur nisi dolore, eveniet neque illo quidem sequi quo soluta!"
+    },
+    {
+        id: 6,
+        image: "/src/assets/img/love.png",
+        isWatching: true,
+    },
+    {
+        id: 7,
+        image: "/src/assets/img/skateboard.png",
+        isWatching: true,
+    },
+    {
+        id: 8,
+        image: "/src/assets/img/space.png",
+        isWatching: true,
     },
 
 ];

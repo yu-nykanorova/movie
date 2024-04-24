@@ -1,4 +1,4 @@
-import { NavLink, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { BellIcon } from "../../icons/BellIcon/BellIcon";
 import { SearchIcon } from "../../icons/SearchIcon/SearchIcon";
 
@@ -7,7 +7,7 @@ export const Header = () => {
   return (
     <div className="header">
         <div className="header-menu">
-          <NavLink className="header-menu__link" to="/">Movies</NavLink>
+          <Link className="header-menu__link" to="/">Movies</Link>
           <Link className="header-menu__link" to="/">Series</Link>
           <Link className="header-menu__link" to="/">Documentaries</Link>
         </div>

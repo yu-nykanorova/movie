@@ -10,7 +10,17 @@
     }
 
     .sidebar-menu {
-        
+        &__main {
+            margin-bottom: 122rem;
+        }
+
+        &__social {
+            margin-bottom: 257rem;
+        }
+
+        &__settings {
+
+        }
     }
 }
 

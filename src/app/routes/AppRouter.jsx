@@ -4,6 +4,7 @@ import {
     Route,
     RouterProvider,
 } from "react-router-dom";
+import { Player } from "../../pages/player/Player";
 import { Favorites } from "../../pages/favorites/Favorites";
 import { Login } from "../../pages/auth/login/Login";
 import GuestRoutes from "./GuestRoutes";
@@ -27,6 +28,7 @@ export const AppRouter = () => {
                     <Route index={true} path="/" element={<Home />} />
                     <Route index={true} path="/trending" element={<Trending />} />
                     <Route index={true} path="/favorites" element={<Favorites />} />
+                    <Route index={true} path="/player" element={<Player />} />
                     <Route index={true} path="/filmPage/:id" element={<FilmPage />} />
                     <Route index={true} path="*" element={<NotFound />} />
                 </Route>

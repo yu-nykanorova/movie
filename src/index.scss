@@ -8,10 +8,13 @@
 @import "shared/ui/Film/Film.scss";
 @import "shared/ui/Film/FilmData.scss";
 @import "shared/ui/LikeBlock/LikeBlock.scss";
+@import "shared/ui/Buttons/WatchNow.scss";
 
 //pages
+@import "pages/home/Home.scss";
 @import "pages/favorites/Favorites.scss";
 @import "pages/trending/Trending.scss";
 @import "pages/filmPage/FilmPage.scss";
+@import "pages/player/Player.scss";
 
 
