@@ -23,6 +23,14 @@ body {
 	height: 100%;
 }
 
+.container-loggedout {
+	display: flex;
+	width: 100%;
+	height: 100%;
+	align-items: center;
+	justify-content: center;
+}
+
 .ml-auto {
 	margin-left: auto;
 }
@@ -32,6 +40,11 @@ body {
     border: none;
 	border-radius: 14rem;
 	background: var(--purple);
+	color: var(--white);
+	transition: var(--transition);
+	font-weight: 500;
+    font-size: 16rem;
+    line-height: 125%;
 }
 
 .icon-heart {

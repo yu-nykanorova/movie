@@ -28,7 +28,7 @@ export const FilmData = ({film}) => {
                 <p className="film-data__desc">{film.desc}</p>
                 <div className="film-data__btn">
                     {/* <button className="btn film-data__btn-watch">Watch now</button> */}
-                    <WatchNow />
+                    <WatchNow className="btn-watch" />
                     <button className="film-data__btn-like">
                         <LikeBlock className="film-like-block">
                             {film.isFavorited ?

@@ -27,7 +27,7 @@ export const Home = () => {
             <div className="poster__title">Insider</div>
             <div className="poster__details">2022 | Comedy horror | 1 Season</div>
             <div className="poster__btn">
-              <WatchNow />
+              <WatchNow className="btn-watch" />
               <button className="poster__btn-like">
                 <LikeBlock className="film-like-block">
                     <HeartEmptyIcon className="icon-heart" />
