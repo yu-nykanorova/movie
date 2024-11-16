@@ -9,10 +9,14 @@ import { SocialIcon } from "../../icons/SocialIcon/SocialIcon";
 import { SettingsIcon } from "../../icons/SettingsIcon/SettingsIcon";
 import { LogOutIcon } from "../../icons/LogOutIcon/LogOutIcon";
 
-export const Sidebar = () => {
+export const Sidebar = ({ onLogout }) => {
     if (location.pathname.includes("/player")) {
         return null;
-      }
+    }
+
+    // const handleLogout = () => {
+    //     setLoggedIn(false);
+    // }
 
     return (
         <div className="sidebar">
@@ -53,14 +57,16 @@ export const Sidebar = () => {
                         <SettingsIcon />
                         <p>Settings</p>
                     </NavLink>
-                    <NavLink to="/login" className={({ isActive }) => isActive ? "menu-item is-active" : "menu-item"}>
-                        <LogOutIcon />
-                        <p>Logout</p>
+                    <NavLink
+                        to="/login"
+                        className={({ isActive }) => isActive ? "menu-item is-active" : "menu-item"}
+                        onClick={onLogout}
+                    >
+                            <LogOutIcon />
+                            <p>Logout</p>
                     </NavLink>
-                </div>
-                
-            </div>
-            
+                </div>   
+            </div>  
         </div>
     )
 }

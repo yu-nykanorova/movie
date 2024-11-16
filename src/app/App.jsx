@@ -24,10 +24,17 @@ const App = () => {
   const handleLogin = () => {
     setLoggedIn(true);
   };
+  const handleLogout = () => {
+    setLoggedIn(false);
+  };
+
+  // const handleLogin = () => {
+  //   !loggedIn ? setLoggedIn(true) : setLoggedIn(false);
+  // };
 
   const router = createBrowserRouter(
     createRoutesFromElements(
-      <Route path="/" element={<MainLayout loggedIn={loggedIn} />}>
+      <Route path="/" element={<MainLayout loggedIn={loggedIn} onLogout={handleLogout} />}>
         <Route element={<GuestRoutes loggedIn={loggedIn} />}> 
           <Route path="/login" element={<Login onLogin={handleLogin}/>}/>
         </Route>
@@ -56,12 +63,12 @@ const App = () => {
           />;
 };
 
-const MainLayout = ({ loggedIn }) => {
+const MainLayout = ({ loggedIn, onLogout }) => {
   return (
     <div className={loggedIn ? "container" : "container-loggedout"}>
       {loggedIn ? (
         <>
-          <Sidebar />
+          <Sidebar onLogout={onLogout} />
           <div className="page">
             <Outlet />
           </div>

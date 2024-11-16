@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom"
 import { LogoIcon } from "../../../shared/icons/Logo/LogoIcon"
 import { LogInButton } from "../../../shared/ui/Buttons/LogInButton"
+import { LoginModal } from "../../../shared/ui/Modal/LoginModal"
 
 export const Login = ({ onLogin }) => {
   return (
@@ -16,6 +17,7 @@ export const Login = ({ onLogin }) => {
         />
         <p className="login__no-account">No account? <NavLink className="login__create-account">Sign up</NavLink></p>
       </div>
+      <LoginModal />
     </div>
   )
 }
