@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   createBrowserRouter,
   createRoutesFromElements,
@@ -21,16 +21,20 @@ import { NotFound } from "../shared/ui/NotFound/NotFound";
 const App = () => {
   const [loggedIn, setLoggedIn] = useState(false);
 
+  useEffect(() => {
+    const isLoggedIn = localStorage.getItem("loggedIn") === "true";
+    setLoggedIn(isLoggedIn);
+  }, []);
+
   const handleLogin = () => {
     setLoggedIn(true);
-  };
-  const handleLogout = () => {
-    setLoggedIn(false);
+    localStorage.setItem("loggedIn", "true");
   };
 
-  // const handleLogin = () => {
-  //   !loggedIn ? setLoggedIn(true) : setLoggedIn(false);
-  // };
+  const handleLogout = () => {
+    setLoggedIn(false);
+    localStorage.removeItem("loggedIn");
+  };
 
   const router = createBrowserRouter(
     createRoutesFromElements(

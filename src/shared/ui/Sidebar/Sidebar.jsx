@@ -14,10 +14,6 @@ export const Sidebar = ({ onLogout }) => {
         return null;
     }
 
-    // const handleLogout = () => {
-    //     setLoggedIn(false);
-    // }
-
     return (
         <div className="sidebar">
             <div className="sidebar-logo">
