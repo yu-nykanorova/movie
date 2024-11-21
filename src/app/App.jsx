@@ -17,6 +17,7 @@ import { Favorites } from "../pages/favorites/Favorites";
 import { Player } from "../pages/player/Player";
 import { FilmPage } from "../pages/filmPage/FilmPage";
 import { NotFound } from "../shared/ui/NotFound/NotFound";
+import { SignUp } from "../pages/auth/signup/SignUp";
 
 const App = () => {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -41,6 +42,7 @@ const App = () => {
       <Route path="/" element={<MainLayout loggedIn={loggedIn} onLogout={handleLogout} />}>
         <Route element={<GuestRoutes loggedIn={loggedIn} />}> 
           <Route path="/login" element={<Login onLogin={handleLogin}/>}/>
+          <Route path="/signup" element={<SignUp/>}/>
         </Route>
         <Route element={<PrivateRoutes loggedIn={loggedIn} />}>
           <Route path="/" element={<Home />} />

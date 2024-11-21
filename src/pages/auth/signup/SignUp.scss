@@ -1,0 +1,28 @@
+.signup {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('src/assets/img/login_bg.png');
+
+    &__logo {}
+
+    &__title {}
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: 20rem;
+        
+        label {}
+
+        input {
+            display: block;
+            &[placeholder] {}
+        }
+    }
+
+    .sign__btn {}
+}

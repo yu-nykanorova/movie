@@ -30,7 +30,7 @@ export const Login = ({ onLogin }) => {
           className="btn-login login__button"
           onClick={handleOpenModal}
         />
-        <p className="login__no-account">No account? <NavLink className="login__create-account">Sign up</NavLink></p>
+        <p className="login__no-account">No account? <NavLink to="/signup" className="login__create-account">Sign up</NavLink></p>
       </div>
       {modalOpen && (
         <LoginModal onLogin={handleLoginSuccess} onClose={handleCloseModal}/>
