@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { LogoIcon } from '../../../shared/icons/Logo/LogoIcon'
+import { AuthButton } from '../../../shared/ui/Buttons/AuthButton';
 
 export const SignUp = () => {
     const [name, setName] = useState("");
@@ -53,13 +54,10 @@ export const SignUp = () => {
                         required
                     />
                 </label>
-                <button
-                    type="submit"
-                    className="btn signup__btn"
-                    //onClick={handleSubmit}
-                >
-                Sign Up
-                </button>
+                <AuthButton
+                    className="signup__btn">
+                        Sign Up
+                </AuthButton>
             </form>
         </div>
     )

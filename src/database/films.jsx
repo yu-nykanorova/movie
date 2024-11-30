@@ -79,5 +79,15 @@ export const films = [
         image: "/src/assets/img/space.png",
         isWatching: true,
     },
+    {
+        id: 9,
+        title: "Insider",
+        image: "/src/assets/img/insider.png",
+        year: "2022",
+        genre: "Comedy horror",
+        isFavorited: false,
+        isTrend: false,
+        isWatching: false,
+    },
 
 ];

@@ -86,21 +86,5 @@
             transform: scale(1.05);
         }
     }
-
-    &__btn-like {
-        background: transparent;
-        border: none;
-        max-width: 54rem;
-        max-height: 54rem;
-        cursor: pointer;
-
-        .film-like-block {
-            max-width: 54rem;
-            max-height: 54rem;
-            border-radius: 14rem;
-            padding: 14rem;
-        }
-    }
-
 }
 

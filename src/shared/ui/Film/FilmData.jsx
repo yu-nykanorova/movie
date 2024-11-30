@@ -1,9 +1,8 @@
 import PropTypes from "prop-types";
-import { LikeBlock } from "../LikeBlock/LikeBlock";
-import { HeartEmptyIcon } from "../../icons/HeartEmpty/HeartEmptyIcon";
-import { HeartFilledIcon } from "../../icons/HeartFilled/HeartFilledIcon";
 import { StarIcon } from "../../icons/StarIcon/StarIcon";
 import { WatchNow } from "../Buttons/WatchNow";
+import { LikeButtonFilled } from "../Buttons/LikeButtonFilled";
+import { LikeButtonEmpty } from "../Buttons/LikeButtonEmpty";
 
 export const FilmData = ({film}) => {
   
@@ -27,15 +26,10 @@ export const FilmData = ({film}) => {
                 </div>
                 <p className="film-data__desc">{film.desc}</p>
                 <div className="film-data__btn">
-                    {/* <button className="btn film-data__btn-watch">Watch now</button> */}
                     <WatchNow className="btn-watch" />
-                    <button className="film-data__btn-like">
-                        <LikeBlock className="film-like-block">
-                            {film.isFavorited ?
-                            <HeartFilledIcon className="icon-heart" /> :
-                            <HeartEmptyIcon className="icon-heart" />}
-                        </LikeBlock> 
-                    </button>
+                    {film.isFavorited ?
+                    <LikeButtonFilled /> :
+                    <LikeButtonEmpty />}
                 </div>
             </div>
 

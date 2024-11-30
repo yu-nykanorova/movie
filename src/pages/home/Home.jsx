@@ -2,10 +2,9 @@ import { Header } from "../../shared/ui/Header/Header"
 import { Film } from "../../shared/ui/Film/Film";
 import { films } from "../../database/films";
 import { Link } from "react-router-dom";
-import { LikeBlock } from "../../shared/ui/LikeBlock/LikeBlock";
-import { HeartEmptyIcon } from "../../shared/icons/HeartEmpty/HeartEmptyIcon";
-import { HeartFilledIcon } from "../../shared/icons/HeartFilled/HeartFilledIcon";
 import { WatchNow } from "../../shared/ui/Buttons/WatchNow";
+import { LikeButtonEmpty } from "../../shared/ui/Buttons/LikeButtonEmpty";
+import { LikeButtonFilled } from "../../shared/ui/Buttons/LikeButtonFilled";
 
 export const Home = () => { 
   const trendFilms = films.filter((film) => film.isTrend);
@@ -14,7 +13,7 @@ export const Home = () => {
       <Film film={film} />
     </Link>
   ));
-
+  const mainPoster = films.find((film) => film.title === "Insider");
   const isWatchingFilms = films.filter((film) => film.isWatching);
   
   return (
@@ -22,17 +21,13 @@ export const Home = () => {
       <div className="poster-container">
         <Header />
         <div className="poster">
-          <img src="/src/assets/img/insider.png" alt="main poster" />
+          <img src={mainPoster.image} alt="main poster" />
           <div className="poster__info">
-            <div className="poster__title">Insider</div>
-            <div className="poster__details">2022 | Comedy horror | 1 Season</div>
+            <div className="poster__title">{mainPoster.title}</div>
+            <div className="poster__details">{mainPoster.year} | {mainPoster.genre} | 1 Season</div>
             <div className="poster__btn">
               <WatchNow className="btn-watch" />
-              <button className="poster__btn-like">
-                <LikeBlock className="film-like-block">
-                    <HeartEmptyIcon className="icon-heart" />
-                </LikeBlock> 
-              </button>
+              <LikeButtonEmpty />
             </div>
           </div>
         </div>
@@ -50,11 +45,11 @@ export const Home = () => {
         {isWatchingFilms.map((film) => (
           <div key={film.id} className="continue-watching__film">
             <img src={film.image} alt="film poster" />
-            <LikeBlock className="film-like-block">
+            <div className="like-buttons-box">
               {film.isFavorited ?
-              <HeartFilledIcon /> :
-              <HeartEmptyIcon />}
-            </LikeBlock>
+              <LikeButtonFilled className="btn-like-small" /> :
+              <LikeButtonEmpty className="btn-like-small" />}
+            </div>
           </div>
         ))}
         </div>

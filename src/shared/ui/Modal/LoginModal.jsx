@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { AuthButton } from '../Buttons/AuthButton';
 
 export const LoginModal = ({ onLogin, onClose }) => {
     const [username, setUsername] = useState("");
@@ -43,13 +44,11 @@ export const LoginModal = ({ onLogin, onClose }) => {
                         required
                     />
                 </label>
-                <button
-                    type="submit"
-                    className="btn login-modal__submit-btn"
-                    //onClick={handleSubmit}
-                >
-                Log In
-                </button>
+                <AuthButton
+                    className="login-modal__submit-btn"
+                    type="submit" >
+                        Log In
+                </AuthButton>
             </form>
         </div>
     </div>

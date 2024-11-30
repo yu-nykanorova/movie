@@ -1,7 +1,6 @@
 import PropTypes from "prop-types";
-import { LikeBlock } from "../LikeBlock/LikeBlock";
-import { HeartEmptyIcon } from "../../icons/HeartEmpty/HeartEmptyIcon";
-import { HeartFilledIcon } from "../../icons/HeartFilled/HeartFilledIcon";
+import { LikeButtonFilled } from "../Buttons/LikeButtonFilled";
+import { LikeButtonEmpty } from "../Buttons/LikeButtonEmpty";
 
 export const Film = ({ film }) => {
     // const handleToggleFavorite = () => {
@@ -22,11 +21,11 @@ export const Film = ({ film }) => {
           </div>
         </div>
         {/* {film.isFavorited && <div onClick={handleUnFavorite}>UnCheck favorite</div>}       */}
-        <LikeBlock className="film-like-block">
+        <div className="like-buttons-box">
           {film.isFavorited ?
-          <HeartFilledIcon /> :
-          <HeartEmptyIcon />}
-        </LikeBlock>            
+          <LikeButtonFilled className="btn-like-small"  /> :
+          <LikeButtonEmpty className="btn-like-small" />}
+        </div>            
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { NavLink } from "react-router-dom"
 import { LogoIcon } from "../../../shared/icons/Logo/LogoIcon"
-import { LogInButton } from "../../../shared/ui/Buttons/LogInButton"
+import { AuthButton } from "../../../shared/ui/Buttons/AuthButton"
 import { LoginModal } from "../../../shared/ui/Modal/LoginModal"
 
 export const Login = ({ onLogin }) => {
@@ -26,10 +26,12 @@ export const Login = ({ onLogin }) => {
           <LogoIcon/>
         </div>
         <p className="login__slogan">Enjoy the newest movies</p>
-        <LogInButton
-          className="btn-login login__button"
+        <AuthButton
+          className="btn-auth login__button"
           onClick={handleOpenModal}
-        />
+        >
+        Log In
+        </AuthButton>
         <p className="login__no-account">No account? <NavLink to="/signup" className="login__create-account">Sign up</NavLink></p>
       </div>
       {modalOpen && (
