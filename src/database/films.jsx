@@ -89,5 +89,4 @@ export const films = [
         isTrend: false,
         isWatching: false,
     },
-
 ];

@@ -1,4 +1,3 @@
-import { Children } from "react"
 
 export const AuthButton = ({ className, type, onClick, children }) => {
   return (

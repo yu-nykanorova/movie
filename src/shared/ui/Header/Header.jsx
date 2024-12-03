@@ -1,9 +1,18 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { BellIcon } from "../../icons/BellIcon/BellIcon";
 import { SearchIcon } from "../../icons/SearchIcon/SearchIcon";
-
+import { Search } from "../Search/Search";
 
 export const Header = () => {
+  const [activeSearch, setActiveSearch] = useState(false);
+
+  const handleOnSearchIcon = () => {
+    if (!activeSearch) {
+      setActiveSearch(true);
+    }
+  }
+
   return (
     <div className="header">
         <div className="header-menu">
@@ -12,7 +21,10 @@ export const Header = () => {
           <Link className="header-menu__link" to="/">Documentaries</Link>
         </div>
         <div className="ml-auto header-info">
-            <SearchIcon className="search-icon" />
+            {activeSearch ?
+              <Search /> :
+              <SearchIcon className="search-icon" onClick={handleOnSearchIcon}/>
+            }
             <BellIcon className="bell-icon" />
             <div className="header-info__user">
               <div className="user-icon">
