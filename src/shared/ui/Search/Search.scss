@@ -11,12 +11,23 @@
         width: 100%;
         outline: 0;
         border: 0;
-        padding: 5rem 32rem 5rem 5rem;
-        border-radius: 8rem;
+        padding: 8rem 32rem 8rem 5rem;
+        border-radius: 5rem;
         background: var(--white);
+        font-size: 14rem;
 
         &::placeholder {
-            font-size: 14rem;
+            font-family: var(--font-family);
+            font-size: 12rem;
+        }
+
+        &.error {
+            box-shadow: inset 0 0 1rem 1rem red;
+            color: red;
+        }
+
+        &.focused {
+            box-shadow: inset 0 0 1rem 1rem var(--light-purple);
         }
     }
 
@@ -24,13 +35,15 @@
         position: absolute;
         width: 100%;
         max-height: 300rem;
-        top: 100%;
+        top: 90%;
         left: 0;
         background: var(--white);
         font-size: 14rem;
+        border-radius: 0 0 5rem 5rem;
+        border-top: 2rem solid var(--gray);
 
         &-item {
-            padding: 10rem;
+            padding: 8rem 5rem;
             cursor: pointer;
 
             &:hover {
@@ -42,9 +55,5 @@
     &__icon-btn {
         position: absolute;
         right: 2%;
-
-        svg path {
-            stroke: var(--black);
-        }
     }
 }

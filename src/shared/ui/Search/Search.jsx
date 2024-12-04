@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { films } from "../../../database/films";
-import { SearchIcon } from "../../icons/SearchIcon/SearchIcon";
+import { GoToIcon } from "../../icons/GoToIcon/GoToIcon";
 
 export const Search = () => {
     const [query, setQuery] = useState("");
     const [results, setResults] = useState([]);
+    const [selectedFilm, setSelectedFilm] = useState(null);
+    const [searchError, setSearchError] = useState(false);
+    const [focused, setFocused] = useState(false);
     const navigate = useNavigate();
 
     const handleInputChange = (e) => {
@@ -18,13 +21,22 @@ export const Search = () => {
                 film.title.toLowerCase().includes(value.toLowerCase())
             );
             setResults(filteredFilms);
+            setSearchError(filteredFilms.length === 0);
         } else {
             setResults([]);
+            setSearchError(false);
         }
+        setSelectedFilm(null);
     };
 
     const goToFilmPage = (filmId) => {
         navigate(`/filmpage/${filmId}`);
+    };
+
+    const handleSearchIconClick = () => {
+        if (selectedFilm) {
+            goToFilmPage(selectedFilm.id);
+        }
     };
 
     return (
@@ -34,6 +46,9 @@ export const Search = () => {
                 placeholder="Enter movie name"
                 value={query}
                 onChange={handleInputChange}
+                onFocus={() => setFocused(true)}
+                onBlur={() => setFocused(false)}
+                className={`${searchError ? "error" : focused ? "focused" : ""}`}
             />
             {results.length > 0 && (
                 <ul className="search__results">
@@ -44,7 +59,8 @@ export const Search = () => {
                             onClick={() => {
                                 setQuery(film.title);
                                 setResults([]);
-                                goToFilmPage(film.id);
+                                setSelectedFilm(film);
+                                setSearchError(false);
                             }}
                         >
                             {film.title}
@@ -52,7 +68,10 @@ export const Search = () => {
                     ))}
                 </ul>
             )}
-            <SearchIcon className="search-icon search__icon-btn"/>
+            <GoToIcon
+                className="search-icon search__icon-btn"
+                onClick={handleSearchIconClick}
+            />
         </div>
     );
 };
