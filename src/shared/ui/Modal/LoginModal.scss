@@ -17,6 +17,10 @@
         color: var(--black);
         border-radius: 14rem;
         padding: 30rem 20rem;
+
+        @include mobile {
+            width: 70%;
+        }
     }
 
     &__close-btn {
@@ -58,6 +62,10 @@
             &[placeholder] {
                 font-family: var(--font-family);
                 font-size: 12rem;
+            }
+
+            &:focus {
+                box-shadow: inset 0 0 1rem 1rem var(--purple);
             }
         }
     }

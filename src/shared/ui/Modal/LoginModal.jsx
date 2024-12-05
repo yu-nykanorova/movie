@@ -1,9 +1,14 @@
-import React, { useState } from 'react'
-import { AuthButton } from '../Buttons/AuthButton';
+import React, { useState, useRef, useEffect } from "react";
+import { AuthButton } from "../Buttons/AuthButton";
 
 export const LoginModal = ({ onLogin, onClose }) => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const inputRef = useRef();
+
+    useEffect(() => {
+        inputRef.current.focus();
+    }, []);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -27,6 +32,7 @@ export const LoginModal = ({ onLogin, onClose }) => {
                 <label>
                     Username:
                     <input
+                        ref = {inputRef}
                         type="text"
                         value={username}
                         placeholder="Enter username here"

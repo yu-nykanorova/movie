@@ -3,13 +3,56 @@
     align-items: center;
     justify-content: space-between;
     padding: 40rem 42rem 65rem 32rem;
+    position: relative;
 
-    .header-menu {
+    @include desktop-small {
+        gap: 20rem;
+    }
+
+    &__burger {
+        display: none;
+        width: 28rem;
+        height: 28rem;
+        cursor: pointer;
+
+        span {
+            display: block;
+            position: relative;
+            top: calc(50% - 1rem);
+            width: 100%;
+            height: 2rem;
+            background: var(--white);
+            border-radius: 8rem;
+
+            &::before, &::after {
+                content: "";
+                display: block;
+                position: absolute;
+                width: 100%;
+                height: 2rem;
+                background: var(--white);
+                border-radius: 8rem;
+            }
+
+            &::before {
+                top: -8rem;
+            }
+            &::after {
+                bottom: -8rem;
+            }
+        }
+
+        @include tablet {
+            display: flex;
+        }
+    }
+
+    &__menu {
         display: flex;
         align-items: center;
         gap: 32rem;
 
-        &__link {
+        &-link {
             font-weight: 500;
             font-size: 16rem;
             line-height: 112%;
@@ -19,9 +62,24 @@
                 transform: scale(1.05);
             }
         }
+
+        @include desktop-small {
+            gap: 24rem;
+        }
+
+        @include tablet {
+            display: none;
+            position: absolute;
+            flex-direction: column;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 40rem 10rem;
+            background: rgba(0, 0, 0, 0.8);
+        }
     }
 
-    .header-info {
+    &__info {
         display: flex;
         align-items: center;
         gap: 24rem;
@@ -33,7 +91,7 @@
             align-items: center;
         }
 
-        &__user {
+        &-user {
             display: flex;
             align-items: center;
             gap: 8rem;

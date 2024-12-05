@@ -9,6 +9,10 @@
     overflow-y: auto;
     position: relative;
 
+    @include mobile {
+        padding: 50rem 20rem;
+    }
+
     &__close-btn {
         width: 22rem;
         display: flex;
@@ -16,8 +20,8 @@
         justify-content: center;
         cursor: pointer;
         position: absolute;
-        top: 50rem;
-        right: 50rem;
+        top: 25rem;
+        right: 25rem;
     }
 
     &__logo {
@@ -38,6 +42,10 @@
         align-items: center;
         gap: 20rem;
         width: 400rem;
+
+        @include mobile {
+            width: 90%;
+        }
         
         label {
             width: 100%;

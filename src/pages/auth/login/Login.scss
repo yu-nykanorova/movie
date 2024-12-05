@@ -9,6 +9,10 @@
     &__container {
         max-width: 255rem;
         text-align: center;
+
+        @include tablet-small {
+            max-width: initial;
+        }
     }
 
     &__logo {

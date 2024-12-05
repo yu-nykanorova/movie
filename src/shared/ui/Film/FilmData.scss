@@ -4,6 +4,10 @@
     padding: 32rem;
     gap: 24rem;
 
+    @include desktop-small {
+		padding: 20rem;
+	}
+
     &__image {
         display: flex;
         justify-content: center;

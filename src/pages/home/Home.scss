@@ -50,6 +50,10 @@
 .continue-watching {
     padding: 32rem;
 
+    @include desktop-small {
+		padding: 20rem;
+	}
+
     &__title {
         font-weight: 600;
 		font-size: 20px;
@@ -61,6 +65,10 @@
         display: grid;
         grid-template-columns: 1fr 1fr 1fr; 
         gap: 24rem;
+
+        @include desktop-small {
+            gap: 18rem;
+        }
     }
 
     &__film {

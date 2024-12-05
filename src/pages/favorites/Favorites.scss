@@ -1,6 +1,10 @@
 .favorites {
     padding: 32rem;
 
+    @include desktop-small {
+		padding: 20rem;
+	}
+
     .favorites-title {
         font-weight: 600;
         font-size: 20rem;
@@ -12,6 +16,10 @@
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         gap: 25rem;
+
+        @include desktop-small {
+            gap: 18rem;
+        }
     }
 
 }
