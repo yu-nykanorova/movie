@@ -1,11 +1,14 @@
+import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import { StarIcon } from "../../icons/StarIcon/StarIcon";
 import { WatchNow } from "../Buttons/WatchNow";
 import { LikeButtonFilled } from "../Buttons/LikeButtonFilled";
 import { LikeButtonEmpty } from "../Buttons/LikeButtonEmpty";
+import { FilmsContext } from "../../FilmsContext";
 
 export const FilmData = ({film}) => {
-  
+    const { toggleFavorite } = useContext(FilmsContext);
+    
     return (
         <div className="film-data">
             <div className="film-data__image">
@@ -27,9 +30,11 @@ export const FilmData = ({film}) => {
                 <p className="film-data__desc">{film.desc}</p>
                 <div className="film-data__btn">
                     <WatchNow className="btn-watch" />
-                    {film.isFavorited ?
-                    <LikeButtonFilled /> :
-                    <LikeButtonEmpty />}
+                    {film.isFavorited ? (
+                        <LikeButtonFilled onClick={() => toggleFavorite(film.id)} />
+                    ) : (
+                        <LikeButtonEmpty onClick={() => toggleFavorite(film.id)} />
+                    )}
                 </div>
             </div>
 
@@ -38,6 +43,6 @@ export const FilmData = ({film}) => {
 
 }
 
-FilmData.propType = {
+FilmData.propTypes = {
     film: PropTypes.object,
 }

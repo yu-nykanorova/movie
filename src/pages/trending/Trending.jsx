@@ -23,7 +23,11 @@ export const Trending = () => {
                 <div className="trend-title">Trending at this moment</div>
                 <div className="trending-list">
                     {trendFilms.map((film) => (
-                        <div key={film.id} onClick={() => handleFilmClick(film)} className={film.id === selectedFilm.id ? "" : "is-active-trend-film"}>
+                        <div
+                            key={film.id}
+                            onClick={() => handleFilmClick(film)}
+                            className={film.id === selectedFilm.id ? "" : "is-active-trend-film"}
+                        >
                             <Film film={film} />
                         </div>
                     ))}

@@ -2,7 +2,7 @@ export const films = [
     {
         id: 1,
         title: "Bullet science",
-        image: "/src/assets/img/bullet_science.png",
+        image: "/assets/img/bullet_science.png",
         year: "2022",
         genre: "Action comedy",
         isFavorited: true,
@@ -15,7 +15,7 @@ export const films = [
     {
         id: 2,
         title: "House of Gucci",
-        image: "/src/assets/img/house_of_gucci.png",
+        image: "/assets/img/house_of_gucci.png",
         year: "2022",
         genre: "Drama",
         isFavorited: true,
@@ -28,7 +28,7 @@ export const films = [
     {
         id: 3,
         title: "Tokyo Train",
-        image: "/src/assets/img/tokyo_train.png",
+        image: "/assets/img/tokyo_train.png",
         year: "2022",
         genre: "Action comedy",
         isFavorited: false,
@@ -41,7 +41,7 @@ export const films = [
     {
         id: 4,
         title: "Moonfall",
-        image: "/src/assets/img/moonfall.png",
+        image: "/assets/img/moonfall.png",
         year: "2022",
         genre: "Sci-fi",
         isFavorited: false,
@@ -54,7 +54,7 @@ export const films = [
     {
         id: 5,
         title: "Life in Paris",
-        image: "/src/assets/img/life_in_paris.png",
+        image: "/assets/img/life_in_paris.png",
         year: "2023",
         genre: "Documentary series",
         isFavorited: false,
@@ -66,27 +66,54 @@ export const films = [
     },
     {
         id: 6,
-        image: "/src/assets/img/love.png",
+        title: "",
+        image: "/assets/img/love.png",
+        year: "",
+        genre: "",
+        isFavorited: true,
+        isTrend: false,
         isWatching: true,
+        rating: 0,
+        duration: "",
+        desc: ""
     },
     {
         id: 7,
-        image: "/src/assets/img/skateboard.png",
+        title: "",
+        image: "/assets/img/skateboard.png",
+        year: "",
+        genre: "",
+        isFavorited: false,
+        isTrend: false,
         isWatching: true,
+        rating: 0,
+        duration: "",
+        desc: ""
     },
     {
         id: 8,
-        image: "/src/assets/img/space.png",
+        title: "",
+        image: "/assets/img/space.png",
+        year: "",
+        genre: "",
+        isFavorited: false,
+        isTrend: false,
         isWatching: true,
+        rating: 0,
+        duration: "",
+        desc: ""
     },
     {
         id: 9,
         title: "Insider",
-        image: "/src/assets/img/insider.png",
+        image: "/assets/img/insider.png",
         year: "2022",
         genre: "Comedy horror",
         isFavorited: false,
         isTrend: false,
         isWatching: false,
+        rating: 0,
+        duration: "",
+        desc: ""
     },
 ];

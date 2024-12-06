@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { BellIcon } from "../../icons/BellIcon/BellIcon";
 import { SearchIcon } from "../../icons/SearchIcon/SearchIcon";
 import { Search } from "../Search/Search";
-import userIcon from "../../../assets/img/user.png";
+import userIcon from "../../../../public/assets/img/user.png";
 
 export const Header = () => {
   const [activeSearch, setActiveSearch] = useState(false);
