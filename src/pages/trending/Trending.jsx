@@ -1,10 +1,11 @@
 import { Header } from "../../shared/ui/Header/Header";
 import { Film } from "../../shared/ui/Film/Film";
 import { FilmData } from "../../shared/ui/Film/FilmData";
-import { films } from "../../database/films";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { FilmsContext } from "../../shared/FilmsContext";
 
 export const Trending = () => {
+    const { films } = useContext(FilmsContext);
     const trendFilms = films.filter((film) => film.isTrend);
     const [selectedFilm, setSelectedFilm] = useState(trendFilms[0]);
 
@@ -17,7 +18,7 @@ export const Trending = () => {
     };
 
     return (
-        <>
+        <div className="trending-page">
             <Header />
             <div className="trending">
                 <div className="trend-title">Trending at this moment</div>
@@ -35,9 +36,9 @@ export const Trending = () => {
             </div>
 
             <div>
-                {selectedFilm && <FilmData film={selectedFilm} />}
+                {selectedFilm && <FilmData filmId={selectedFilm.id} />}
             </div>
             
-        </>
+        </div>
     )
 }

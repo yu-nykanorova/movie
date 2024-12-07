@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import PropTypes from "prop-types";
 import { StarIcon } from "../../icons/StarIcon/StarIcon";
 import { WatchNow } from "../Buttons/WatchNow";
@@ -6,8 +6,14 @@ import { LikeButtonFilled } from "../Buttons/LikeButtonFilled";
 import { LikeButtonEmpty } from "../Buttons/LikeButtonEmpty";
 import { FilmsContext } from "../../FilmsContext";
 
-export const FilmData = ({film}) => {
-    const { toggleFavorite } = useContext(FilmsContext);
+export const FilmData = ({ filmId }) => {
+    const { films, toggleFavorite } = useContext(FilmsContext);
+
+    const film = films.find((f) => f.id === filmId);
+    
+    if (!film) {
+        return <p>Film not found</p>
+    }
     
     return (
         <div className="film-data">

@@ -23,6 +23,10 @@ body {
 	display: grid;
 	grid-template-columns: auto 1fr;
 	height: 100%;
+
+	// @include tablet-small {
+	// 	grid-template-columns: 1fr;
+	// }
 }
 
 .container-loggedout {

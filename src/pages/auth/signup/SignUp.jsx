@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
-import { LogoIcon } from '../../../shared/icons/Logo/LogoIcon'
-import { AuthButton } from '../../../shared/ui/Buttons/AuthButton';
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { Logo } from "../../../shared/icons/Logo/Logo";
+import { AuthButton } from "../../../shared/ui/Buttons/AuthButton";
 
 export const SignUp = () => {
     const [name, setName] = useState("");
@@ -17,7 +17,7 @@ export const SignUp = () => {
                 </svg>
             </div>
             <div className="signup__logo">
-                <LogoIcon />
+                <Logo />
             </div>
             <h2 className="signup__title">Please complete a simple registration</h2>
             <form className="signup__form">

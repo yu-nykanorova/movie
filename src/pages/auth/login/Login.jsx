@@ -1,8 +1,8 @@
-import { useState } from "react"
-import { NavLink } from "react-router-dom"
-import { LogoIcon } from "../../../shared/icons/Logo/LogoIcon"
-import { AuthButton } from "../../../shared/ui/Buttons/AuthButton"
-import { LoginModal } from "../../../shared/ui/Modal/LoginModal"
+import { useState } from "react";
+import { NavLink } from "react-router-dom";
+import { Logo } from "../../../shared/icons/Logo/Logo";
+import { AuthButton } from "../../../shared/ui/Buttons/AuthButton";
+import { LoginModal } from "../../../shared/ui/Modal/LoginModal";
 
 export const Login = ({ onLogin }) => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -23,7 +23,7 @@ export const Login = ({ onLogin }) => {
     <div className="login">
       <div className="login__container">
         <div className="login__logo">
-          <LogoIcon/>
+          <Logo />
         </div>
         <p className="login__slogan">Enjoy the newest movies</p>
         <AuthButton

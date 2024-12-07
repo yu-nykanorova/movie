@@ -6,21 +6,43 @@
     min-width: 20%;
     box-shadow: 2px 0px 90px rgba(97, 0, 194, 0.4);
 
+    @include tablet {
+        padding: 40rem 30rem;
+        min-width: initial;
+        width: auto;
+    }
+
+    @include tablet-small {
+        padding: 30rem 10rem;
+        min-width: initial;
+        width: auto;   
+    }
+
     &-logo {
         margin-bottom: 58rem;
+
+        @include tablet-small {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40rem;   
+        }
     }
 
     &-menu {
         &__main {
             margin-bottom: 122rem;
+
+            @include tablet-small {
+                margin-bottom: 30rem;   
+            }
         }
 
         &__social {
             margin-bottom: 257rem;
-        }
 
-        &__settings {
-
+            @include tablet-small {
+                margin-bottom: 30rem;   
+            }
         }
     }
 }
@@ -40,9 +62,26 @@
         opacity: 1;
         font-weight: 500;
     }
+
+    p {
+        @include mobile {
+            display: none;
+        }
+    }
+
+    @include tablet-small {
+        flex-direction: column;
+        font-size: 12rem;
+        font-weight: 200;
+        gap: 8rem;
+    }
 }
 
 .is-active {
     font-weight: 700;
     opacity: 1;
+
+    @include tablet-small {
+        font-weight: 600;
+    }
 }

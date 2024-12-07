@@ -19,7 +19,7 @@ export const Home = () => {
   }
   
   return (
-    <>
+    <div className="home-page">
       <div className="poster-container">
         <Header />
         <div className="poster">
@@ -76,6 +76,6 @@ export const Home = () => {
         ))}
         </div>
       </div>
-    </>
+    </div>
   )
 }

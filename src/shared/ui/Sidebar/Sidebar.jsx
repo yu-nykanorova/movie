@@ -1,7 +1,9 @@
+import { useState, useEffect } from "react"; 
 import { FilmIcon } from "../../icons/FilmIcon/FilmIcon";
 import { HeartWhiteIcon } from "../../icons/HeartWhiteIcon/HeartWhiteIcon";
 import { TrendingUpIcon } from "../../icons/TrendingUpIcon/TrendingUpIcon";
 import { CalendarIcon } from "../../icons/CalendarIcon/CalendarIcon";
+import { Logo } from "../../icons/Logo/Logo";
 import { LogoIcon } from "../../icons/Logo/LogoIcon";
 import { NavLink, Link } from "react-router-dom";
 import { CommunityIcon } from "../../icons/CommunityIcon/CommunityIcon";
@@ -10,6 +12,20 @@ import { SettingsIcon } from "../../icons/SettingsIcon/SettingsIcon";
 import { LogOutIcon } from "../../icons/LogOutIcon/LogOutIcon";
 
 export const Sidebar = ({ onLogout }) => {
+    const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 768);
+
+    const handleResize = () => {
+        setIsSmallScreen(window.innerWidth <= 768);
+    };
+
+    useEffect(() => {
+        window.addEventListener("resize", handleResize);
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+    }, []);
+
+
     if (location.pathname.includes("/player")) {
         return null;
     }
@@ -17,7 +33,9 @@ export const Sidebar = ({ onLogout }) => {
     return (
         <div className="sidebar">
             <div className="sidebar-logo">
-                <Link to="/"><LogoIcon /></Link>
+                <Link to="/">
+                    {isSmallScreen ? <LogoIcon /> : <Logo />}
+                </Link>
             </div>
             <div className="sidebar-menu">
                 <div className="sidebar-menu__main">

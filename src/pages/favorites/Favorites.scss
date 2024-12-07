@@ -20,6 +20,10 @@
         @include desktop-small {
             gap: 18rem;
         }
+
+        @include tablet {
+            grid-template-columns: repeat(auto-fit, minmax(200rem, 1fr));
+        }
     }
 
 }
