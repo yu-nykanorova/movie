@@ -1,30 +1,34 @@
-.trending {
-	padding: 32rem;
-
-	@include desktop-small {
-		padding: 20rem;
-	}
-
-	.trend-title {
-		font-weight: 600;
-		font-size: 20px;
-		color: var(--white);
-		margin-bottom: 16rem;
-	}
-
-	.trending-list {
-		display: grid;
-		grid-template-columns: 1fr 1fr 1fr 1fr;
-		gap: 24rem;
-
+.trending-page {
+	.trending {
+		padding: 32rem;
+	
 		@include desktop-small {
-			grid-template-columns: repeat(auto-fit, minmax(200rem, 1fr));
-			gap: 18rem;
+			padding: 20rem;
 		}
+	
+		.trend-title {
+			font-weight: 600;
+			font-size: 20px;
+			color: var(--white);
+			margin-bottom: 16rem;
+		}
+	
+		.trending-list {
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr 1fr;
+			gap: 24rem;
+	
+			@include desktop-small {
+				grid-template-columns: repeat(auto-fit, minmax(200rem, 1fr));
+				gap: 18rem;
+			}
+		}
+	
 	}
-
+	
+	.is-active-trend-film {
+		opacity: 0.3;
+	}
 }
 
-.is-active-trend-film {
-	opacity: 0.3;
-}
+

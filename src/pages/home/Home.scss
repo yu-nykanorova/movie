@@ -1,110 +1,187 @@
-.poster-container {
-    position: relative;
-    height: 455rem;
-    margin-bottom: 6rem;
+.home-page {
 
-    .poster {
-        position: absolute;
-        height: 100%;
-        max-height: 455rem;
-        width: 100%;
-        top: 0;
-        z-index: 1;
-        overflow: hidden;
+    .poster-container {
+        position: relative;
+        height: 455rem;
+        margin-bottom: 6rem;
+        z-index: 2;
     
-        img {
-            height: 100%;
-            width: 100%;
-            object-fit: cover;
-        }
-        
-        &__info {
+        .poster {
             position: absolute;
-            bottom: 0;
-            padding: 32rem;
+            height: 100%;
+            max-height: 455rem;
+            width: 100%;
+            top: 0;
+            z-index: 1;
+            overflow: hidden;
+        
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+            
+            &__info {
+                position: absolute;
+                bottom: 0;
+                padding: 32rem;
+    
+                @include mobile {
+                    text-align: center;
+                }
+            }
+        
+            &__title {
+                font-weight: 600;
+                font-size: 48rem;
+                line-height: 100%;
+                color: var(--white);
+                margin-bottom: 20rem;
+            }
+        
+            &__details {
+                font-weight: 400;
+                font-size: 14rem;
+                line-height: 143%;
+                color: var(--white);
+                margin-bottom: 36rem;
+            }
+        
+            &__btn {
+                display: flex;
+                align-items: center;
+                gap: 16rem;
+                margin-bottom: 21rem;
+    
+                @include mobile {
+                    justify-content: space-evenly;
+                }
+    
+                &-watch {
+                    @include mobile {
+                        padding: 14rem 20rem;
+                    }
+                }
+    
+                &-like {
+                    @include mobile {
+                        width: 50rem;
+                        height: 50rem;
+                        padding: 10rem;
+                    }
+                }
+            }
+        }
+    }
+
+    .trending {
+        padding: 32rem;
+    
+        @include desktop-small {
+            padding: 20rem;
+        }
+    
+        .trend-title {
+            font-weight: 600;
+            font-size: 20px;
+            color: var(--white);
+            margin-bottom: 16rem;
+        }
+    
+        &-list {
+            gap: 30rem;
+        }
+    
+        &-item-slide {
+            padding: 16rem;
+            transition: var(--transition);
+    
+            &:hover {
+                transform: scale(1.05);
+            }
+        }
+    
+        &-item-link {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+    
+    .continue-watching {
+        padding: 32rem;
+    
+        @include desktop-small {
+            padding: 20rem;
         }
     
         &__title {
             font-weight: 600;
-            font-size: 48rem;
-            line-height: 100%;
+            font-size: 20px;
             color: var(--white);
-            margin-bottom: 20rem;
+            margin-bottom: 16rem;
         }
     
-        &__details {
-            font-weight: 400;
-            font-size: 14rem;
-            line-height: 143%;
-            color: var(--white);
-            margin-bottom: 36rem;
+        &__list {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr; 
+            gap: 24rem;
         }
     
-        &__btn {
+        &__film {
             display: flex;
+            justify-content: center;
             align-items: center;
-            gap: 16rem;
-            margin-bottom: 21rem;
-        }
-    }
-}
-
-.continue-watching {
-    padding: 32rem;
-
-    @include desktop-small {
-		padding: 20rem;
-	}
-
-    &__title {
-        font-weight: 600;
-		font-size: 20px;
-		color: var(--white);
-		margin-bottom: 16rem;
-    }
-
-    &__list {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr; 
-        gap: 24rem;
-
-        @include desktop-small {
-            gap: 18rem;
-        }
-
-        @include tablet {
-            grid-template-columns: repeat(auto-fit, minmax(200rem, 1fr));
-        }
-    }
-
-    &__film {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        max-width: 348rem;
-        max-height: 209rem;
-        overflow: hidden;
-        border-radius: 20rem;
-        object-fit: cover;
-        border: 1px solid var(--gray);
-        position: relative;
-        cursor: pointer;
-        transition: var(--transition);
-
-        @include tablet {
-            max-height: initial;
-            max-width: initial;
-            height: 200rem;
-        }
-
-        &:hover {
-            transform: scale(1.03);
-        }
-
-        img {
-            width: 100%;
-            height: 100%;
+            max-width: 348rem;
+            max-height: 209rem;
+            overflow: hidden;
             border-radius: 20rem;
+            object-fit: cover;
+            border: 1px solid var(--gray);
+            position: relative;
+            cursor: pointer;
+            transition: var(--transition);
+    
+            @include tablet {
+                max-height: initial;
+                max-width: initial;
+                height: 200rem;
+            }
+    
+            @include mobile {
+                height: 130rem;
+            }
+    
+            &:hover {
+                transform: scale(1.03);
+            }
+    
+            img {
+                width: 100%;
+                height: 100%;
+                border-radius: 20rem;
+            }
         }
     }
 }
+
+.slider-container {
+    max-width: 100%; 
+    overflow: hidden; 
+}
+  
+.slick-slider {
+width: 100%; 
+overflow: hidden; 
+}
+
+.slick-track {
+display: flex !important;
+width: auto !important; 
+}
+  
+.slick-slide {
+flex: 0 0 30%; 
+width: 100%;
+}
+  

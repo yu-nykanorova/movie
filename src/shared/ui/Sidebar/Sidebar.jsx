@@ -32,13 +32,13 @@ export const Sidebar = ({ onLogout }) => {
 
     return (
         <div className="sidebar">
-            <div className="sidebar-logo">
+            <div className="sidebar__logo">
                 <Link to="/">
                     {isSmallScreen ? <LogoIcon /> : <Logo />}
                 </Link>
             </div>
-            <div className="sidebar-menu">
-                <div className="sidebar-menu__main">
+            <div className="sidebar__menu">
+                <div className="sidebar__menu-main">
                     <NavLink to="/" className={({ isActive }) => isActive ? "menu-item is-active" : "menu-item"}>
                         <FilmIcon /> 
                         <p>Home</p>
@@ -56,7 +56,7 @@ export const Sidebar = ({ onLogout }) => {
                         <p>Coming soon</p>
                     </NavLink>
                 </div>
-                <div className="sidebar-menu__social">
+                <div className="sidebar__menu-social">
                     <NavLink to="/community" className={({ isActive }) => isActive ? "menu-item is-active" : "menu-item"}>
                         <CommunityIcon />
                         <p>Community</p>
@@ -66,7 +66,7 @@ export const Sidebar = ({ onLogout }) => {
                         <p>Social</p>
                     </NavLink>
                 </div>
-                <div className="sidebar-menu__settings">
+                <div className="sidebar__menu-settings">
                     <NavLink to="/settings" className={({ isActive }) => isActive ? "menu-item is-active" : "menu-item"}>
                         <SettingsIcon />
                         <p>Settings</p>

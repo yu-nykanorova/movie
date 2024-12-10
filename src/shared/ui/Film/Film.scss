@@ -78,10 +78,26 @@
         align-items: center;
         justify-content: space-evenly;
 	}
+
+    @include mobile {
+        flex-direction: row;
+        padding: 5px;
+        justify-content: space-between;
+    }
+}
+
+.trending-page .film-title, .home-page .film-title {
+    @include mobile {
+        flex: 50%;
+    }
 }
 
 .favorites-page .film-image, .home-page .film-image {
 	@include tablet-small {
-        max-height: 200rem;
+        height: 200rem;
+	}
+
+	@include tablet-small {
+        height: 120rem;
 	}
 }

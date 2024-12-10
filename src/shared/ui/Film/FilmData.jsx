@@ -16,7 +16,7 @@ export const FilmData = ({ filmId }) => {
     }
     
     return (
-        <div className="film-data">
+        <div className="film-data content">
             <div className="film-data__image">
                 <img src={film.image} alt="film poster" />
             </div>

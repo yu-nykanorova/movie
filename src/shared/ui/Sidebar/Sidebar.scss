@@ -18,7 +18,7 @@
         width: auto;   
     }
 
-    &-logo {
+    &__logo {
         margin-bottom: 58rem;
 
         @include tablet-small {
@@ -28,8 +28,8 @@
         }
     }
 
-    &-menu {
-        &__main {
+    &__menu {
+        &-main {
             margin-bottom: 122rem;
 
             @include tablet-small {
@@ -37,7 +37,7 @@
             }
         }
 
-        &__social {
+        &-social {
             margin-bottom: 257rem;
 
             @include tablet-small {

@@ -23,10 +23,6 @@ body {
 	display: grid;
 	grid-template-columns: auto 1fr;
 	height: 100%;
-
-	// @include tablet-small {
-	// 	grid-template-columns: 1fr;
-	// }
 }
 
 .container-loggedout {
@@ -35,6 +31,12 @@ body {
 	height: 100%;
 	align-items: center;
 	justify-content: center;
+}
+
+.content {
+	max-width: 1166rem;
+	margin: 0 auto;
+  	overflow: hidden;
 }
 
 .ml-auto {

@@ -20,7 +20,7 @@ export const Trending = () => {
     return (
         <div className="trending-page">
             <Header />
-            <div className="trending">
+            <div className="trending content">
                 <div className="trend-title">Trending at this moment</div>
                 <div className="trending-list">
                     {trendFilms.map((film) => (

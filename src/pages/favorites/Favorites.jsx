@@ -11,7 +11,7 @@ export const Favorites = () => {
   return (
     <div className="favorites-page">
       <Header />
-      <div className="favorites">
+      <div className="favorites content">
         <div className="favorites-title">Favorites</div>
         <div className="favorites-list">
           {favoriteFilms.map((film) => (
