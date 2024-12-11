@@ -86,18 +86,25 @@
     }
 }
 
-.trending-page .film-title, .home-page .film-title {
+.trending-page .film-title {
     @include mobile {
         flex: 50%;
     }
 }
 
-.favorites-page .film-image, .home-page .film-image {
+.favorites-page .film-image {
 	@include tablet-small {
         height: 200rem;
 	}
 
-	@include tablet-small {
-        height: 120rem;
+	@include mobile {
+        height: 140rem;
+	}
+}
+
+.favorites-page .film-info {
+
+	@include mobile {
+        padding: 2rem 5rem;
 	}
 }

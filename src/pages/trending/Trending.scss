@@ -6,14 +6,14 @@
 			padding: 20rem;
 		}
 	
-		.trend-title {
+		&__title {
 			font-weight: 600;
 			font-size: 20px;
 			color: var(--white);
 			margin-bottom: 16rem;
 		}
 	
-		.trending-list {
+		&__list {
 			display: grid;
 			grid-template-columns: 1fr 1fr 1fr 1fr;
 			gap: 24rem;

@@ -21,8 +21,8 @@ export const Trending = () => {
         <div className="trending-page">
             <Header />
             <div className="trending content">
-                <div className="trend-title">Trending at this moment</div>
-                <div className="trending-list">
+                <div className="trending__title">Trending at this moment</div>
+                <div className="trending__list">
                     {trendFilms.map((film) => (
                         <div
                             key={film.id}

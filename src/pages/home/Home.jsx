@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import Slider from "react-slick";
 import { Header } from "../../shared/ui/Header/Header";
 import { Film } from "../../shared/ui/Film/Film";
 import { Link } from "react-router-dom";
@@ -7,8 +6,7 @@ import { WatchNow } from "../../shared/ui/Buttons/WatchNow";
 import { LikeButtonEmpty } from "../../shared/ui/Buttons/LikeButtonEmpty";
 import { LikeButtonFilled } from "../../shared/ui/Buttons/LikeButtonFilled";
 import { FilmsContext } from "../../shared/FilmsContext";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 export const Home = () => { 
   const { films, toggleFavorite } = useContext(FilmsContext);
@@ -20,30 +18,6 @@ export const Home = () => {
   if (!films || films.length === 0) {
     return <p>Loading films...</p>;
   }
-
-  const sliderSettings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  };
   
   return (
     <div className="home-page">
@@ -73,16 +47,30 @@ export const Home = () => {
       </div>
         
       <div className="trending content">
-        <div className="trend-title">Trending</div>
-        <Slider {...sliderSettings} className="trending-list">
+        <div className="trending__title">Trending</div>
+        <Swiper
+          loop={true}
+          spaceBetween={0} // Расстояние между слайдами
+          slidesPerView={4} // Количество видимых слайдов
+          navigation // Включает кнопки "вперед/назад"
+          pagination={{ clickable: true }} // Точки навигации
+          breakpoints={{
+            1440: { slidesPerView: 4 },
+            1200: { slidesPerView: 3 },
+            992: { slidesPerView: 3 },
+            768: { slidesPerView: 2 },
+            576: { slidesPerView: 1 },
+            0: { slidesPerView: 1 },
+          }}
+        >
           {trendFilms.map((film) => (
-            <div key={film.id} className="trending-item-slide">
-              <Link className="trending-item-link" to={`/filmPage/${film.id}`}>
+            <SwiperSlide key={film.id}>
+              <Link className="trending__item-link" to={`/filmPage/${film.id}`}>
                 <Film film={film} />
               </Link>
-            </div>
+            </SwiperSlide>
           ))}
-        </Slider>
+        </Swiper>
       </div>
 
       <div className="continue-watching content">
