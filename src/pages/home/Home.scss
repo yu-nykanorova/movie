@@ -78,6 +78,7 @@
 
     .trending {
         padding: 32rem;
+        width: 100%;
     
         @include desktop-small {
             padding: 20rem;
@@ -94,11 +95,31 @@
             display: flex;
             justify-content: space-between;
             gap: 24rem;
-        }
-    
-        &__item {
-            width: 100%; 
-            max-width: 255rem; 
+
+            @include desktop-small {
+                gap: 20rem;
+            }
+
+            @include tablet {
+                justify-content: space-between;
+                flex-wrap: wrap;
+            }
+
+            &-item {
+                width: 100%; 
+                max-width: 255rem;
+
+                @include tablet {
+                    max-width: initial;
+                    flex: 0 0 calc((100% - 20rem)/2);
+                    max-height: 200rem;
+                }
+
+                @include mobile {
+                    flex: 100%;
+                    max-height: 130rem;
+                }
+            }
         }
     }
     
@@ -118,11 +139,11 @@
     
         &__list {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr; 
+            grid-template-columns: repeat(3, 1fr); 
             gap: 24rem;
 
             @include tablet-small {
-                grid-template-columns: repeat(auto-fill, minmax(180rem, 1fr));
+                grid-template-columns: repeat(auto-fill, minmax(200rem, 1fr));
                 gap: 18rem;
             }
         }
@@ -148,7 +169,7 @@
             }
     
             @include mobile {
-                height: 130rem;
+                height: 120rem;
             }
     
             &:hover {
@@ -162,22 +183,5 @@
             }
         }
     }
-}
-
-.swiper {
-    width: 100%;
-    height: auto;
-    overflow: hidden;
-    border: 4px solid yellow;
-}
-
-.swiper-wrapper {
-    border: 5rem solid red;
-}
-
-.swiper-slide {
-    margin-right: 24rem;
-    //max-width: 255rem;
-    //flex: 0 0 auto; /* Отключает растяжение слайдов */
 }
 

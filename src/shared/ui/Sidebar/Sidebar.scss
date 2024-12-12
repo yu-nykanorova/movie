@@ -6,6 +6,10 @@
     min-width: 20%;
     box-shadow: 2px 0px 90px rgba(97, 0, 194, 0.4);
 
+    @include desktop-small {
+        width: 250rem;
+    }
+
     @include tablet {
         padding: 40rem 30rem;
         min-width: initial;

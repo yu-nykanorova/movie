@@ -2,17 +2,16 @@
 @import "styles/vars";
 @import "styles/mixins";
 @import "styles/layout";
-@import "swiper/swiper-bundle.css";
 
 //shared
+@import "shared/ui/Buttons/Buttons.scss";
+@import "shared/ui/Search/Search.scss";
 @import "shared/ui/Sidebar/Sidebar.scss";
 @import "shared/ui/Header/Header.scss";
 @import "shared/ui/Film/Film.scss";
 @import "shared/ui/Film/FilmData.scss";
-@import "shared/ui/Buttons/Buttons.scss";
 @import "shared/ui/NotFound/NotFound.scss";
 @import "shared/ui/Modal/LoginModal.scss";
-@import "shared/ui/Search/Search.scss";
 
 //pages
 @import "pages/home/Home.scss";

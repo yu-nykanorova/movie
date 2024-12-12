@@ -35,11 +35,11 @@ export const FilmData = ({ filmId }) => {
                 </div>
                 <p className="film-data__desc">{film.desc}</p>
                 <div className="film-data__btn">
-                    <WatchNow className="btn-watch" />
+                    <WatchNow className="btn-watch film-data__btn-watch" />
                     {film.isFavorited ? (
-                        <LikeButtonFilled onClick={() => toggleFavorite(film.id)} />
+                        <LikeButtonFilled className="film-data__btn-like" onClick={() => toggleFavorite(film.id)} />
                     ) : (
-                        <LikeButtonEmpty onClick={() => toggleFavorite(film.id)} />
+                        <LikeButtonEmpty className="film-data__btn-like" onClick={() => toggleFavorite(film.id)} />
                     )}
                 </div>
             </div>

@@ -68,6 +68,10 @@
             @include tablet {
                 margin: 0;
             }
+
+            @include mobile {
+                font-size: 20rem;
+            }
         }
 
         .rating {
@@ -75,6 +79,18 @@
             align-items: center;
             justify-content: space-between;
             gap: 3rem;
+
+            svg {
+                @include mobile {
+                    width: 14rem;
+                }
+            }
+
+            p {
+                @include mobile {
+                    font-size: 14rem;
+                }
+            }
         }
     }
 
@@ -86,6 +102,10 @@
         color: var(--white);
         gap: 36rem;
         margin-bottom: 21rem;
+
+        @include mobile {
+            font-size: 12rem;
+        }
     }
 
     &__desc {
@@ -94,6 +114,10 @@
         line-height: 150%;
         color: var(--white);
         margin-bottom: 26rem;
+
+        @include mobile {
+            font-size: 14rem;
+        }
     }
 
     &__btn {
@@ -104,14 +128,22 @@
         
     &__btn-watch {
         padding: 17rem 24rem;
-        font-weight: 500;
-        font-size: 16rem;
-        line-height: 125%;
-        color: var(--white);
-        transition: var(--transition);
+
+        @include mobile {
+            padding: 14rem 18rem;
+            font-size: 14rem;
+        }
         
         &:hover {
             transform: scale(1.05);
+        }
+    }
+
+    &__btn-like {
+        @include mobile {
+            width: 46rem;
+            height: 46rem;
+            padding: 8rem;
         }
     }
 }

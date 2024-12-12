@@ -15,8 +15,9 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        max-width: 348rem;
+        width: 100%;
         max-height: 259rem;
+        height: 100%;
         overflow: hidden;
         border-radius: 20rem;
 
@@ -68,6 +69,12 @@
 	@include tablet-small {
         max-height: 120rem;
 	}
+}
+
+.home-page .film-info {
+    @include desktop-small {
+        padding: 8rem;
+    }
 }
 
 .trending-page .film-info, .home-page .film-info {

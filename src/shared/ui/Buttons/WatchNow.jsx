@@ -1,6 +1,6 @@
 
-export const WatchNow = (props) => {
+export const WatchNow = ({ className }) => {
   return (
-    <button className={`btn ${props.className}`}>Watch now</button>
+    <button className={`btn ${className}`}>Watch now</button>
   )
 }

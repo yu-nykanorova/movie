@@ -6,7 +6,6 @@ import { WatchNow } from "../../shared/ui/Buttons/WatchNow";
 import { LikeButtonEmpty } from "../../shared/ui/Buttons/LikeButtonEmpty";
 import { LikeButtonFilled } from "../../shared/ui/Buttons/LikeButtonFilled";
 import { FilmsContext } from "../../shared/FilmsContext";
-import { Swiper, SwiperSlide } from "swiper/react";
 
 export const Home = () => { 
   const { films, toggleFavorite } = useContext(FilmsContext);
@@ -48,29 +47,13 @@ export const Home = () => {
         
       <div className="trending content">
         <div className="trending__title">Trending</div>
-        <Swiper
-          loop={true}
-          spaceBetween={0} // Расстояние между слайдами
-          slidesPerView={4} // Количество видимых слайдов
-          navigation // Включает кнопки "вперед/назад"
-          pagination={{ clickable: true }} // Точки навигации
-          breakpoints={{
-            1440: { slidesPerView: 4 },
-            1200: { slidesPerView: 3 },
-            992: { slidesPerView: 3 },
-            768: { slidesPerView: 2 },
-            576: { slidesPerView: 1 },
-            0: { slidesPerView: 1 },
-          }}
-        >
-          {trendFilms.map((film) => (
-            <SwiperSlide key={film.id}>
-              <Link className="trending__item-link" to={`/filmPage/${film.id}`}>
+        <div className="trending__list">
+            {trendFilms.map((film) => (
+              <Link className="trending__list-item" key={film.id} to={`/filmPage/${film.id}`}>
                 <Film film={film} />
               </Link>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+            ))}
+        </div>
       </div>
 
       <div className="continue-watching content">
