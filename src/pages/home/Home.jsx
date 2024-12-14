@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useMemo } from "react";
 import { Header } from "../../shared/ui/Header/Header";
 import { Film } from "../../shared/ui/Film/Film";
 import { Link } from "react-router-dom";
@@ -10,9 +10,9 @@ import { FilmsContext } from "../../shared/FilmsContext";
 export const Home = () => { 
   const { films, toggleFavorite } = useContext(FilmsContext);
 
-  const trendFilms = films.filter((film) => film.isTrend);
-  const mainPoster = films.find((film) => film.title === "Insider");
-  const isWatchingFilms = films.filter((film) => film.isWatching);
+  const trendFilms = useMemo(() => films.filter((film) => film.isTrend), [films]);
+  const mainPoster = useMemo(() => films.find((film) => film.title === "Insider"), [films]);
+  const isWatchingFilms = useMemo(() => films.filter((film) => film.isWatching), [films]);
 
   if (!films || films.length === 0) {
     return <p>Loading films...</p>;

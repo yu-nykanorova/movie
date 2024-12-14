@@ -1,12 +1,12 @@
 import { Header } from "../../shared/ui/Header/Header";
 import { Film } from "../../shared/ui/Film/Film";
 import { FilmData } from "../../shared/ui/Film/FilmData";
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext, useMemo } from "react";
 import { FilmsContext } from "../../shared/FilmsContext";
 
 export const Trending = () => {
     const { films } = useContext(FilmsContext);
-    const trendFilms = films.filter((film) => film.isTrend);
+    const trendFilms = useMemo(() => films.filter((film) => film.isTrend), [films]);
     const [selectedFilm, setSelectedFilm] = useState(trendFilms[0]);
 
     useEffect(() => {

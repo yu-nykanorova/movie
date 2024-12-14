@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useMemo } from "react";
 import PropTypes from "prop-types";
 import { StarIcon } from "../../icons/StarIcon/StarIcon";
 import { WatchNow } from "../Buttons/WatchNow";
@@ -9,7 +9,7 @@ import { FilmsContext } from "../../FilmsContext";
 export const FilmData = ({ filmId }) => {
     const { films, toggleFavorite } = useContext(FilmsContext);
 
-    const film = films.find((f) => f.id === filmId);
+    const film = useMemo(() => films.find((f) => f.id === filmId), [films]);
     
     if (!film) {
         return <p>Film not found</p>

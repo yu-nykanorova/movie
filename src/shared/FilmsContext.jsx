@@ -1,4 +1,4 @@
-import React, { createContext, useState, useEffect } from "react";
+import React, { createContext, useState, useEffect, useMemo } from "react";
 import { films as initialFilms } from "../database/films";
 
 export const FilmsContext = createContext();
@@ -21,8 +21,10 @@ export const FilmsProvider = ({ children }) => {
         );
     };
 
+    const value = useMemo(() => ({ films, toggleFavorite }), [films, toggleFavorite]);
+
     return (
-        <FilmsContext.Provider value={{ films, toggleFavorite }}>
+        <FilmsContext.Provider value={value}>
             {children}
         </FilmsContext.Provider>
     );
