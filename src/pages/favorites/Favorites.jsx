@@ -7,7 +7,7 @@ import { FilmsContext } from "../../shared/FilmsContext";
 export const Favorites = () => {
   const { films } = useContext(FilmsContext);
   const favoriteFilms = useMemo(() => {
-    films.filter((film) => film.isFavorited);
+    return films?.filter((film) => film.isFavorited);
   }, [films]);
 
   return (
@@ -16,7 +16,7 @@ export const Favorites = () => {
       <div className="favorites content">
         <div className="favorites-title">Favorites</div>
         <div className="favorites-list">
-          {favoriteFilms.map((film) => (
+          {favoriteFilms?.map((film) => (
             <Link
               key={film.id}
               to={`/filmPage/${film.id}`}

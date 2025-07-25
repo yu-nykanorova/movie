@@ -9,7 +9,7 @@ import { FilmsContext } from "../../FilmsContext";
 export const FilmData = ({ filmId }) => {
     const { films, toggleFavorite } = useContext(FilmsContext);
 
-    const film = useMemo(() => films.find((f) => f.id === filmId), [films]);
+    const film = useMemo(() => films.find((f) => f.id === filmId), [films, filmId]);
     
     if (!film) {
         return <p>Film not found</p>
@@ -50,5 +50,5 @@ export const FilmData = ({ filmId }) => {
 }
 
 FilmData.propTypes = {
-    film: PropTypes.object,
+    filmId: PropTypes.number.isRequired,
 }

@@ -6,12 +6,14 @@ import { FilmsContext } from "../../shared/FilmsContext";
 
 export const Trending = () => {
     const { films } = useContext(FilmsContext);
-    const trendFilms = useMemo(() => films.filter((film) => film.isTrend), [films]);
-    const [selectedFilm, setSelectedFilm] = useState(trendFilms[0]);
+    const trendFilms = useMemo(() => films?.filter((film) => film.isTrend), [films]);
+    const [selectedFilm, setSelectedFilm] = useState(null);
 
     useEffect(() => {
-        setSelectedFilm(trendFilms[0]);
-    }, []);
+        if (trendFilms.length > 0) {
+            setSelectedFilm(trendFilms[0]);
+        }        
+    }, [trendFilms]);
 
     const handleFilmClick = (film) => {
         setSelectedFilm(film);
@@ -27,7 +29,7 @@ export const Trending = () => {
                         <div
                             key={film.id}
                             onClick={() => handleFilmClick(film)}
-                            className={film.id === selectedFilm.id ? "" : "is-active-trend-film"}
+                            className={film.id === selectedFilm?.id ? "" : "is-active-trend-film"}
                         >
                             <Film film={film} />
                         </div>
@@ -36,7 +38,9 @@ export const Trending = () => {
             </div>
 
             <div>
-                {selectedFilm && <FilmData filmId={selectedFilm.id} />}
+                {trendFilms.length > 0 && selectedFilm && (
+                    <FilmData filmId={selectedFilm.id} />
+                )}
             </div>
             
         </div>
