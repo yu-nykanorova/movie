@@ -62,7 +62,7 @@ export const Home = () => {
         {isWatchingFilms.map((film) => (
           <Link
             key={film.id}
-            to="*"
+            to="/player"
             className="continue-watching__film"
           >
             <img src={film.image} alt="film poster" />

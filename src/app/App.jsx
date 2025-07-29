@@ -5,7 +5,7 @@ import {
   Route,
   RouterProvider,
   Navigate,
-  Outlet
+  Outlet,
 } from "react-router-dom";
 import PropTypes from "prop-types";
 
@@ -53,23 +53,24 @@ const App = () => {
           <Route path="*" element={<NotFound />} />
         </Route>
       </Route>
-    )
+    ),
+    {
+      future: {
+        v7_startTransition: true,
+        v7_fetcherPersist: true,
+        v7_relativeSplatPath: true,
+        v7_normalizeFormMethod: true,
+        v7_partialHydration: true,
+        v7_skipActionErrorRevalidation: true,
+      },
+    }
   );
 
-  return <RouterProvider
-            router={router}
-            future={{
-              v7_startTransition: true,
-              v7_fetcherPersist: true,
-              v7_relativeSplatPath: true,
-              v7_normalizeFormMethod: true,
-              v7_partialHydration: true,
-              v7_skipActionErrorRevalidation: true,
-            }}
-          />;
+  return <RouterProvider router={router} />;
 };
 
 const MainLayout = ({ loggedIn, onLogout }) => {
+
   return (
     <div className={loggedIn ? "container" : "container-loggedout"}>
       {loggedIn ? (

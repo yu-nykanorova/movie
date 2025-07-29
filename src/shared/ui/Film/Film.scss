@@ -11,6 +11,10 @@
         transform: scale(1.03);
     }
 
+    @include mobile {
+        max-width: initial;
+    }
+
     &-image {
         display: flex;
         justify-content: center;

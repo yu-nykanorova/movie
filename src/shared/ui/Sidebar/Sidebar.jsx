@@ -25,11 +25,6 @@ export const Sidebar = ({ onLogout }) => {
         };
     }, []);
 
-
-    if (location.pathname.includes("/player")) {
-        return null;
-    }
-
     return (
         <div className="sidebar">
             <div className="sidebar__logo">

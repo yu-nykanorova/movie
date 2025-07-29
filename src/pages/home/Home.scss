@@ -101,7 +101,6 @@
             }
 
             @include tablet {
-                justify-content: space-between;
                 flex-wrap: wrap;
             }
 
@@ -145,6 +144,10 @@
             @include tablet-small {
                 grid-template-columns: repeat(auto-fill, minmax(200rem, 1fr));
                 gap: 18rem;
+            }
+
+            @include mobile {
+                grid-template-columns: 1fr;
             }
         }
     

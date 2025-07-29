@@ -29,7 +29,7 @@ export const LoginModal = ({ onLogin, onClose }) => {
             </div>
             <h2 className="login-modal__title">Log In</h2>
             <p className="login-modal__comment">(Enter any letters into Username and Password fields and click "Log in")</p>
-            <form className="login-modal__form" onSubmit={handleSubmit}>
+            <form className="login-modal__form" name="login_form" onSubmit={handleSubmit}>
                 <label>
                     Username:
                     <input
