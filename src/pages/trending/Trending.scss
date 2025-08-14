@@ -22,6 +22,19 @@
 				grid-template-columns: repeat(auto-fit, minmax(200rem, 1fr));
 				gap: 18rem;
 			}
+			@include mobile {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				flex-wrap: wrap;
+				gap: 15rem;
+			}
+
+			& > div {
+				@include mobile {
+					flex: 0 0 calc((100% - 15rem) / 2);
+				}
+			}
 		}
 	
 	}
